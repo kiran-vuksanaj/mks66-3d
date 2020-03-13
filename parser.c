@@ -106,6 +106,12 @@ void parse_file ( char * filename,
       add_circle( edges, xvals[0], yvals[0], zvals[0], r, step);
     }//end of circle
 
+    else if( strncmp(line, "sphere", strlen(line)) == 0 ) {
+      fgets(line,sizeof(line),f);
+      sscanf(line, "%lf %lf %lf %lf",xvals,yvals,zvals,&r);
+      add_sphere( edges, *xvals, *yvals, *zvals, r, step );
+    }// end of sphere
+
     else if ( strncmp(line, "hermite", strlen(line)) == 0 ||
               strncmp(line, "bezier", strlen(line)) == 0 ) {
       if (strncmp(line, "hermite", strlen(line)) == 0 )

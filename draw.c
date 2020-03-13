@@ -46,6 +46,11 @@ void add_box( struct matrix * edges,
 void add_sphere( struct matrix * edges, 
                  double cx, double cy, double cz,
                  double r, int step ) {
+  struct matrix * sphere = generate_sphere(cx,cy,cz,r,step);
+  int col;
+  for(col = 0; col < sphere->lastcol; col++){
+    add_edge(edges,sphere->m[0][col],sphere->m[1][col],sphere->m[2][col],sphere->m[0][col],sphere->m[1][col],sphere->m[2][col]);
+  }
   return;
 }
 
