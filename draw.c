@@ -25,6 +25,27 @@
 void add_box( struct matrix * edges,
               double x, double y, double z,
               double width, double height, double depth ) {
+  // FRONT / TOP / LEFT
+  // min-z + max-y + min-x
+
+  // front face
+  add_edge(edges,x,y,z,x+width,y,z);
+  add_edge(edges,x+width,y,z,x+width,y-height,z);
+  add_edge(edges,x+width,y-height,z,x,y-height,z);
+  add_edge(edges,x,y-height,z,x,y,z);
+
+  // back face
+  add_edge(edges,x,y,z+depth,x+width,y,z+depth);
+  add_edge(edges,x+width,y,z+depth,x+width,y-height,z+depth);
+  add_edge(edges,x+width,y-height,z+depth,x,y-height,z+depth);
+  add_edge(edges,x,y-height,z+depth,x,y,z+depth);
+
+  // depth-wise edges
+  add_edge(edges,x,y,z,x,y,z+depth);
+  add_edge(edges,x+width,y,z,x+width,y,z+depth);
+  add_edge(edges,x,y-height,z,x,y-height,z+depth);
+  add_edge(edges,x+width,y-height,z,x+width,y-height,z+depth);
+  
 }
 
 /*======== void add_sphere() ==========
@@ -81,7 +102,7 @@ struct matrix * generate_sphere(double cx, double cy, double cz,
       add_point(out,x,y,z);
     }
   }
-  print_matrix(out);
+  // print_matrix(out);
   return out;
 }
 
