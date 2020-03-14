@@ -162,7 +162,7 @@ struct matrix * generate_torus( double cx, double cy, double cz,
       x = cos(phi) * (r1 * cos(theta) + r2) + cx;
       y = r1*sin(theta) + cy;
       z = -sin(phi)*(r1 * cos(theta) + r2) + cz;
-      printf("(%lf %lf %lf){theta = %lf, phi = %lf}\n",x,y,z,theta,phi);
+      // printf("(%lf %lf %lf){theta = %lf, phi = %lf}\n",x,y,z,theta,phi);
       add_point(out,x,y,z);
     }
   }
