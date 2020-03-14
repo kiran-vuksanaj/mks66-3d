@@ -227,6 +227,7 @@ void parse_file ( char * filename,
 
     else if ( strncmp(line, "display", strlen(line)) == 0 ) {
       //printf("DISPLAY\t%s", line);
+      printf("displaying...\n");
       clear_screen(s);
       draw_lines(edges, s, c);
       display( s );
@@ -236,7 +237,7 @@ void parse_file ( char * filename,
       //printf("SAVE\t%s", line);
       fgets(line, sizeof(line), f);
       *strchr(line, '\n') = 0;
-      //printf("name: %s\n", line);
+      printf("saving to file: [%s]\n", line);
       clear_screen(s);
       draw_lines(edges, s, c);
       save_extension(s, line);
