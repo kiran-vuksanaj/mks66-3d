@@ -115,6 +115,10 @@ void parse_file ( char * filename,
       add_box(edges,xvals[0],yvals[0],zvals[0],xvals[1],yvals[1],zvals[1]);
     }// end of box
 
+    else if( strncmp(line, "clear", strlen(line)) == 0 ) {
+      edges->lastcol = 0;
+    }// end of clear
+
     else if( strncmp(line, "sphere", strlen(line)) == 0 ) {
       fgets(line,sizeof(line),f);
       sscanf(line, "%lf %lf %lf %lf",xvals,yvals,zvals,&r);
