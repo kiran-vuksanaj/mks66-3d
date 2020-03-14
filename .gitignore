@@ -2,14 +2,18 @@
 # Created by https://www.gitignore.io/api/c,emacs
 # Edit at https://www.gitignore.io/?templates=c,emacs
 
+
 # Binary Executable
 main
+gen
 
 # Images
 *.png
 *.jpg
 *.ppm
 *.gif
+
+frames/
 
 ### C ###
 # Prerequisites

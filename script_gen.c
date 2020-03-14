@@ -26,7 +26,7 @@ int main(){
   for(frame = 0; frame < FRAMES; frame++){
     printf("sphere\n%lf %lf %lf %d\n",
 	   x,y,z,radius);
-    printf("save\nframe%02d.png\nclear\n",frame);
+    printf("save\nframes/frame%02d.png\nclear\n",frame);
     x += vx;
     y += vy;
     z += vz;

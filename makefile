@@ -6,6 +6,13 @@ CC= gcc
 run: all
 	./main script
 
+anim: all gen
+	./gen | ./main
+	convert frames/frame*.png anim.gif
+
+gen: script_gen.o
+	$(CC) -o gen script_gen.o
+
 all: $(OBJECTS)
 	$(CC) -o main $(OBJECTS) $(LDFLAGS)
 
@@ -23,6 +30,11 @@ matrix.o: matrix.c matrix.h
 
 parser.o: parser.c parser.h matrix.h draw.h display.h ml6.h
 	$(CC) $(CFLAGS) -c parser.c
+
+
+script_gen.o: script_gen.c
+	$(CC) $(CFLAGS) -c script_gen.c
+
 
 clean:
 	rm *.o *~
