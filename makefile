@@ -7,6 +7,7 @@ run: all
 	./main script
 
 anim: all gen
+	rm frames/*.png
 	./gen | ./main
 	convert frames/frame*.png anim.gif
 

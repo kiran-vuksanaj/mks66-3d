@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FRAMES 10
+#define FRAMES 100
 
 int main(){
   double
@@ -34,6 +34,8 @@ int main(){
     vx += ax;
     vy += ay;
     vz += az;
+
+    if(y < 50) vy *= -1;
   }
   
   printf("quit\n");
